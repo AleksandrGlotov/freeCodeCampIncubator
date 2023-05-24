@@ -186,3 +186,96 @@ const testObj2 = {
 // Only change code below this line
 const entreeValue = testObj2["an entree"]; // Change this line
 const drinkValue = testObj2["the drink"]; // Change this line
+
+// Setup
+const testObj3 = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+
+// Only change code below this line
+const playerNumber = 16;  // Change this line
+const player = testObj3[playerNumber];   // Change this line
+
+// Setup
+const myDog1 = {
+  "name": "Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+// Only change code below this line
+myDog1.name = "Happy Coder";
+
+const myDog2= {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+myDog2.bark = "woof";
+
+// Setup
+const myDog3 = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"],
+  "bark": "woof"
+};
+
+// Only change code below this line
+
+delete myDog3.tails
+
+// Setup
+function phoneticLookup(val) {
+  let result = "";
+
+  // Only change code below this line
+  const lookup = {
+    "alpha": "Adams",
+    "bravo": "Boston",
+    "charlie": "Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank",
+  }
+  result = lookup[val]
+  // Only change code above this line
+  return result;
+}
+
+phoneticLookup("charlie");
+
+function checkObj(obj, checkProp) {
+  // Only change code below this line
+  return (obj.hasOwnProperty(checkProp)) ? obj[checkProp] : "Not Found"
+  // Only change code above this line
+}
+
+const myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  },
+  {
+    "artist": "Kal govna",
+    "title": "Puk puk",
+    "release_year": 2023,
+    "formats": [
+      "LP",
+      "prkh"
+    ],
+  }
+];
