@@ -191,45 +191,45 @@ const drinkValue = testObj2["the drink"]; // Change this line
 const testObj3 = {
   12: "Namath",
   16: "Montana",
-  19: "Unitas"
+  19: "Unitas",
 };
 
 // Only change code below this line
-const playerNumber = 16;  // Change this line
-const player = testObj3[playerNumber];   // Change this line
+const playerNumber = 16; // Change this line
+const player = testObj3[playerNumber]; // Change this line
 
 // Setup
 const myDog1 = {
-  "name": "Coder",
-  "legs": 4,
-  "tails": 1,
-  "friends": ["freeCodeCamp Campers"]
+  name: "Coder",
+  legs: 4,
+  tails: 1,
+  friends: ["freeCodeCamp Campers"],
 };
 
 // Only change code below this line
 myDog1.name = "Happy Coder";
 
-const myDog2= {
-  "name": "Happy Coder",
-  "legs": 4,
-  "tails": 1,
-  "friends": ["freeCodeCamp Campers"]
+const myDog2 = {
+  name: "Happy Coder",
+  legs: 4,
+  tails: 1,
+  friends: ["freeCodeCamp Campers"],
 };
 
 myDog2.bark = "woof";
 
 // Setup
 const myDog3 = {
-  "name": "Happy Coder",
-  "legs": 4,
-  "tails": 1,
-  "friends": ["freeCodeCamp Campers"],
-  "bark": "woof"
+  name: "Happy Coder",
+  legs: 4,
+  tails: 1,
+  friends: ["freeCodeCamp Campers"],
+  bark: "woof",
 };
 
 // Only change code below this line
 
-delete myDog3.tails
+delete myDog3.tails;
 
 // Setup
 function phoneticLookup(val) {
@@ -237,14 +237,14 @@ function phoneticLookup(val) {
 
   // Only change code below this line
   const lookup = {
-    "alpha": "Adams",
-    "bravo": "Boston",
-    "charlie": "Chicago",
-    "delta": "Denver",
-    "echo": "Easy",
-    "foxtrot": "Frank",
-  }
-  result = lookup[val]
+    alpha: "Adams",
+    bravo: "Boston",
+    charlie: "Chicago",
+    delta: "Denver",
+    echo: "Easy",
+    foxtrot: "Frank",
+  };
+  result = lookup[val];
   // Only change code above this line
   return result;
 }
@@ -253,29 +253,125 @@ phoneticLookup("charlie");
 
 function checkObj(obj, checkProp) {
   // Only change code below this line
-  return (obj.hasOwnProperty(checkProp)) ? obj[checkProp] : "Not Found"
+  return obj.hasOwnProperty(checkProp) ? obj[checkProp] : "Not Found";
   // Only change code above this line
 }
 
 const myMusic = [
   {
-    "artist": "Billy Joel",
-    "title": "Piano Man",
-    "release_year": 1973,
-    "formats": [
-      "CD",
-      "8T",
-      "LP"
-    ],
-    "gold": true
+    artist: "Billy Joel",
+    title: "Piano Man",
+    release_year: 1973,
+    formats: ["CD", "8T", "LP"],
+    gold: true,
   },
   {
-    "artist": "Kal govna",
-    "title": "Puk puk",
-    "release_year": 2023,
-    "formats": [
-      "LP",
-      "prkh"
-    ],
-  }
+    artist: "Kal govna",
+    title: "Puk puk",
+    release_year: 2023,
+    formats: ["LP", "prkh"],
+  },
 ];
+
+const myStorage = {
+  car: {
+    inside: {
+      "glove box": "maps",
+      "passenger seat": "crumbs",
+    },
+    outside: {
+      trunk: "jack",
+    },
+  },
+};
+
+const gloveBoxContents = myStorage.car.inside["glove box"];
+
+const myPlants = [
+  {
+    type: "flowers",
+    list: ["rose", "tulip", "dandelion"],
+  },
+  {
+    type: "trees",
+    list: ["fir", "pine", "birch"],
+  },
+];
+
+const secondTree = myPlants[1].list[1];
+
+// Setup
+const recordCollection = {
+  2548: {
+    albumTitle: "Slippery When Wet",
+    artist: "Bon Jovi",
+    tracks: ["Let It Rock", "You Give Love a Bad Name"],
+  },
+  2468: {
+    albumTitle: "1999",
+    artist: "Prince",
+    tracks: ["1999", "Little Red Corvette"],
+  },
+  1245: {
+    artist: "Robert Palmer",
+    tracks: [],
+  },
+  5439: {
+    albumTitle: "ABBA Gold",
+  },
+};
+
+// Only change code below this line
+function updateRecords(records, id, prop, value) {
+  if (prop == "tracks") {
+    if (value) {
+      if (records[id].hasOwnProperty("tracks")) {
+        records[id]["tracks"].push(value);
+      } else {
+        records[id]["tracks"] = [];
+        records[id]["tracks"].push(value);
+      }
+    } else {
+      delete records[id][prop];
+    }
+  } else {
+    if (value) {
+      records[id][prop] = value;
+    } else {
+      delete records[id][prop];
+    }
+  }
+  return records;
+}
+updateRecords(recordCollection, 2548, "tracks", "");
+
+// Setup
+const myArray = [];
+let i = 5;
+while (i >= 0) {
+  myArray.push(i);
+  i--;
+}
+
+// Setup
+const myArray1 = [];
+
+for (let i = 1; i < 6; i++) {
+  myArray1.push(i);
+}
+
+// Setup
+const myArray2 = [];
+
+for (let i = 1; i < 10; i += 2) {
+  myArray2.push(i);
+}
+
+// Setup
+const myArray3 = [];
+
+// Only change code below this line
+
+for (let i = 9; i > 0; i -= 2) {
+  myArray3.push(i);
+}
