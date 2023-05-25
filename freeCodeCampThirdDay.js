@@ -45,3 +45,75 @@ function sum(arr, n) {
   }
   // Only change code above this line
 }
+
+// Setup
+const contacts = [
+  {
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
+
+function lookUpProfile(name, prop) {
+  // Only change code below this line
+  for (let i = 0; i < contacts.length; i++) {
+    if (contacts[i]["firstName"] == name) {
+      if (contacts[i].hasOwnProperty(prop)) {
+        return contacts[i][prop];
+      } else return "No such property";
+    }
+  }
+  return "No such contact";
+  // Only change code above this line
+}
+
+lookUpProfile("Akira", "likes");
+
+function randomFraction() {
+  // Only change code below this line
+  return Math.random();
+  return 0;
+
+  // Only change code above this line
+}
+
+function randomWholeNum() {
+  return Math.floor(Math.random() * 10);
+}
+
+function randomRange(myMin, myMax) {
+  return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+}
+
+function convertToInteger(str) {
+  return parseInt(str);
+}
+
+convertToInteger("56");
+
+
+function convertToInteger(str) {
+  return parseInt(str, 2)
+}
+
+convertToInteger("10011");
