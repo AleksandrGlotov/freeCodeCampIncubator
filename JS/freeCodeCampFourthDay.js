@@ -163,3 +163,55 @@ import subtract from "./math_functions.js";
 // Only change code above this line
 
 subtract(7, 4);
+
+const makeServerRequest1 = new Promise((resolve, reject) => {});
+
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer represents a response from a server
+  let responseFromServer;
+
+  if (responseFromServer) {
+    resolve("We got the data");
+  } else {
+    reject("Data not received");
+  }
+});
+
+const makeServerRequest2 = new Promise((resolve, reject) => {
+  // responseFromServer is set to true to represent a successful response from a server
+  let responseFromServer = true;
+
+  if (responseFromServer) {
+    resolve("We got the data");
+  } else {
+    reject("Data not received");
+  }
+});
+
+makeServerRequest2.then((result) => {
+  console.log(result);
+});
+
+makeServerRequest2.catch((error) => {
+  console.log(error);
+});
+
+let myString = "Hello, World!";
+let myRegex = /Hello/;
+let result1 = myRegex.test(myString); // Change this line
+
+let waldoIsHiding = "Somewhere Waldo is hiding in this text.";
+let waldoRegex = /Waldo/; // Change this line
+let result2 = waldoRegex.test(waldoIsHiding);
+
+let petString = "James has a pet cat.";
+let petRegex = /dog|cat|bird|fish/; // Change this line
+let result3 = petRegex.test(petString);
+
+let myString1 = "freeCodeCamp";
+let fccRegex = /freecodecamp/i; // Change this line
+let result4 = fccRegex.test(myString1);
+
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /coding/; // Change this line
+let result5 = extractStr.match(codingRegex); // Change this line
