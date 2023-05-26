@@ -114,3 +114,52 @@ class Vegetable {
 
 const carrot = new Vegetable("carrot");
 console.log(carrot.name); // Should display 'carrot'
+
+// Only change code below this line
+class Thermostat {
+  constructor(temperature) {
+    this._temperature = temperature;
+  }
+
+  get temperature() {
+    return (5 / 9) * (this._temperature - 32);
+  }
+  set temperature(tempetatureC) {
+    this._temperature = (tempetatureC * 9.0) / 5 + 32;
+  }
+}
+// Only change code above this line
+
+const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in Celsius
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in Celsius
+
+export const uppercaseString = (string) => {
+  return string.toUpperCase();
+};
+
+export const lowercaseString = (string) => {
+  return string.toLowerCase();
+};
+
+import { uppercaseString, lowercaseString } from "./string_functions.js";
+// Only change code above this line
+
+uppercaseString("hello");
+lowercaseString("WORLD!");
+
+import * as stringFunctions from "./string_functions.js";
+// Only change code above this line
+
+stringFunctions.uppercaseString("hello");
+stringFunctions.lowercaseString("WORLD!");
+
+export default function subtract(x, y) {
+  return x - y;
+}
+
+import subtract from "./math_functions.js";
+// Only change code above this line
+
+subtract(7, 4);
