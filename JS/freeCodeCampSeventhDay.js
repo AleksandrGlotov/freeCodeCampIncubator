@@ -89,3 +89,33 @@ function findElement(arr, func) {
 }
 
 findElement([1, 2, 3, 4], (num) => num % 2 === 0);
+
+function booWho(bool) {
+  return typeof bool == "boolean" ? true : false;
+}
+
+booWho(null);
+
+function titleCase(str) {
+  let arr = str.split(" ");
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = arr[i][0].toUpperCase() + arr[i].slice(1).toLowerCase();
+  }
+  return arr.join(" ");
+}
+
+titleCase("I'm a little tea pot");
+
+function frankenSplice(arr1, arr2, n) {
+  return [...arr2.slice(0, n), ...arr1, ...arr2.slice(n)];
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+function bouncer(arr) {
+  return arr.filter(
+    (i) => i != NaN && i != undefined && i != null && !!i != false
+  );
+}
+
+bouncer([7, "ate", "", false, 9]);
