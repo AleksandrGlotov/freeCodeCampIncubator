@@ -119,3 +119,46 @@ function bouncer(arr) {
 }
 
 bouncer([7, "ate", "", false, 9]);
+
+function getIndexToIns(arr, num) {
+  arr.sort((a, b) => a - b);
+  if (arr.length == 0) {
+    return 0;
+  } else {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] >= num) {
+        console.log(i);
+        return i;
+      }
+    }
+  }
+  if (arr[arr.length - 1] < num) {
+    return arr.length;
+  }
+}
+
+getIndexToIns([], 50);
+
+function mutation(arr) {
+  let first = arr[0].split("").map((i) => i.toLowerCase());
+  let second = arr[1].split("").map((i) => i.toLowerCase());
+  for (let i = 0; i < second.length; i++) {
+    if (first.indexOf(second[i]) == -1) {
+      return false;
+    }
+  }
+  return true;
+}
+
+mutation(["hello", "Hello"]);
+
+function chunkArrayInGroups(arr, size) {
+  let count = Math.ceil(arr.length / size);
+  let result = [];
+  for (let i = 0; i < count; i++) {
+    result.push(arr.slice(i * size, i * size + size));
+  }
+  return result;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
