@@ -241,3 +241,86 @@ Dog.prototype.constructor = Dog;
 
 let duck1 = new Bird();
 let beagle6 = new Dog();
+
+function Animal() { }
+Animal.prototype.eat = function() { console.log("nom nom nom"); };
+
+function Dog() { }
+// Only change code below this line
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+Dog.prototype.bark = function() {
+  console.log("Woof!");
+};
+
+
+// Only change code above this line
+
+let beagle8 = new Dog();
+
+function Bird() { }
+
+Bird.prototype.fly = function() { return "I am flying!"; };
+
+function Penguin() { }
+Penguin.prototype = Object.create(Bird.prototype);
+Penguin.prototype.constructor = Penguin;
+
+// Only change code below this line
+Penguin.prototype.fly = function() {
+  return "Alas, this is a flightless bird.";
+};
+
+
+// Only change code above this line
+
+let penguin = new Penguin();
+console.log(penguin.fly());
+
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+
+let boat = {
+  name: "Warrior",
+  type: "race-boat"
+};
+
+// Only change code below this line
+let glideMixin  = function(obj) {
+  obj.glide = function() {
+    console.log("wow!");
+  }
+};
+
+glideMixin(bird);
+glideMixin(boat);
+
+function Bird() {
+  let weight = 15;
+
+  this.getWeight = function() {
+    return weight;
+  }
+}
+
+(function () {
+  console.log("A cozy nest is ready");
+})();
+
+let funModule = (function () {
+  return {
+    isCuteMixin: function(obj) {
+      obj.isCute = function() {
+        return true;
+      };
+    },
+    singMixin: function(obj) {
+      bj.sing = function() {
+        console.log("Singing to an awesome tune");
+      };
+    },
+  }
+})()
