@@ -60,7 +60,7 @@ function House(numBedrooms) {
 
 // Only change code below this line
 
-let myHouse = new House(3)
+let myHouse = new House(3);
 
 myHouse instanceof House;
 
@@ -74,7 +74,7 @@ let ownProps = [];
 // Only change code below this line
 
 for (let property in canary) {
-  if(canary.hasOwnProperty(property)) {
+  if (canary.hasOwnProperty(property)) {
     ownProps.push(property);
   }
 }
@@ -82,7 +82,6 @@ for (let property in canary) {
 function Dog(name) {
   this.name = name;
 }
-
 
 Dog.prototype.numLegs = 4;
 // Only change code above this line
@@ -102,7 +101,7 @@ let prototypeProps = [];
 // Only change code below this line
 
 for (let property in beagle) {
-  if(beagle.hasOwnProperty(property)) {
+  if (beagle.hasOwnProperty(property)) {
     ownProps.push(property);
   } else {
     prototypeProps.push(property);
@@ -129,10 +128,116 @@ function Dog(name) {
 Dog.prototype = {
   // Only change code below this line
   numLegs: 4,
-  eat: function() {
+  eat: function () {
     console.log("nom nom nom");
   },
-  describe: function() {
+  describe: function () {
     console.log("My name is " + this.name);
-  }
+  },
 };
+
+function Dog(name) {
+  this.name = name;
+}
+
+// Only change code below this line
+Dog.prototype = {
+  constructor: Dog,
+  numLegs: 4,
+  eat: function () {
+    console.log("nom nom nom");
+  },
+  describe: function () {
+    console.log("My name is " + this.name);
+  },
+};
+
+function Dog(name) {
+  this.name = name;
+}
+
+let beagle3 = new Dog("Snoopy");
+
+// Only change code below this line
+
+Dog.prototype.isPrototypeOf(beagle);
+
+function Dog(name) {
+  this.name = name;
+}
+
+let beagle2 = new Dog("Snoopy");
+
+Dog.prototype.isPrototypeOf(beagle); // yields true
+
+// Fix the code below so that it evaluates to true
+Object.prototype.isPrototypeOf(Dog.prototype);
+
+function Cat(name) {
+  this.name = name;
+}
+
+Cat.prototype = {
+  constructor: Cat,
+};
+
+function Bear(name) {
+  this.name = name;
+}
+
+Bear.prototype = {
+  constructor: Bear,
+};
+
+function Animal() {}
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function () {
+    console.log("nom nom nom");
+  },
+};
+
+function Animal() {}
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function () {
+    console.log("nom nom nom");
+  },
+};
+
+// Only change code below this line
+
+let duck = Object.create(Animal.prototype); // Change this line
+let beagle4 = Object.create(Animal.prototype); // Change this line
+
+function Animal() {}
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function () {
+    console.log("nom nom nom");
+  },
+};
+
+function Dog() {}
+
+// Only change code below this line
+Dog.prototype = Object.create(Animal.prototype);
+
+let beagle5 = new Dog();
+
+function Animal() {}
+function Bird() {}
+function Dog() {}
+
+Bird.prototype = Object.create(Animal.prototype);
+Dog.prototype = Object.create(Animal.prototype);
+
+// Only change code below this line
+Bird.prototype.constructor = Bird;
+Dog.prototype.constructor = Dog;
+
+let duck1 = new Bird();
+let beagle6 = new Dog();
