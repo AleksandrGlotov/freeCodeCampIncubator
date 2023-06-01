@@ -646,3 +646,62 @@ function nonMutatingSort(arr) {
 }
 
 nonMutatingSort(globalArray);
+
+function splitify(str) {
+  // Only change code below this line
+  return str.split(/\W/);
+
+  // Only change code above this line
+}
+
+splitify("Hello World,I-am code");
+
+function sentensify(str) {
+  // Only change code below this line
+  return str.split(/\W/).join(" ");
+
+  // Only change code above this line
+}
+
+sentensify("May-the-force-be-with-you");
+
+// Only change code below this line
+function urlSlug(title) {
+  return title
+    .trim()
+    .split(/\W/)
+    .filter((j) => j != "")
+    .map((i) => i.toLowerCase())
+    .join("-");
+}
+// Only change code above this line
+urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone");
+
+function checkPositive(arr) {
+  // Only change code below this line
+  return arr.every((currentValue) => currentValue > 0);
+  // Only change code above this line
+}
+
+checkPositive([1, 2, 3, -4, 5]);
+
+function checkPositive(arr) {
+  // Only change code below this line
+  return arr.some((i) => i > 0);
+  // Only change code above this line
+}
+
+checkPositive([1, 2, 3, -4, 5]);
+
+function add(x) {
+  // Only change code below this line
+  return function (y) {
+    return function (z) {
+      return x + y + z;
+    };
+  };
+
+  // Only change code above this line
+}
+
+add(10)(20)(30);
