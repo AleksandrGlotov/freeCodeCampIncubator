@@ -182,3 +182,16 @@ function findUniq(arr) {
     return arr[1];
   } else return arr[0];
 }
+
+function solution(str){
+  if (str.length  == 0) {
+    return []
+  }
+   if  (str.length % 2 == 0) {
+     return str.match(/..?/g) 
+   } else {
+     let reuslt = str.match(/..?/g) 
+     reuslt[reuslt. length - 1] = reuslt[reuslt. length - 1].concat("_")
+     return reuslt
+   }
+}
