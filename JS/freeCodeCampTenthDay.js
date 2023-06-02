@@ -158,3 +158,27 @@ function sumFibs(num) {
 sumFibs(10);
 sumFibs(13);
 sumFibs(1000);
+
+function sumPrimes(num) {
+  function isPrime(num) {
+    const sqrt = Math.sqrt(num);
+    for (let i = 2; i <= sqrt; i++) {
+      if (num % i === 0) return false;
+    }
+    return true;
+  }
+
+  let sum = 0;
+  for (let i = 2; i <= num; i++) {
+    if (isPrime(i)) sum += i;
+  }
+  return sum;
+}
+
+function findUniq(arr) {
+  if (arr[0] == arr[1]) {
+    return arr.find((item) => item != arr[0]);
+  } else if (arr[0] == arr[2]) {
+    return arr[1];
+  } else return arr[0];
+}
