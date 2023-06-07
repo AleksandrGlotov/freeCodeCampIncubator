@@ -29,3 +29,16 @@ function towerBuilder(nFloors) {
   }
   return build;
 }
+
+function high(x) {
+  let arr = x.split(" ");
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    let sum = 0;
+    for (let j = 0; j < arr[i].length; j++) {
+      sum += arr[i][j].charCodeAt() - 96;
+    }
+    result.push([arr[i], sum]);
+  }
+  return result.sort((a, b) => b[1] - a[1])[0][0];
+}
