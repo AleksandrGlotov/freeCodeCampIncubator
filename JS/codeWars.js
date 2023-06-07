@@ -16,3 +16,16 @@ function findMissingLetter(array) {
     }
   }
 }
+
+function towerBuilder(nFloors) {
+  let build = [];
+  for (let i = 1; i <= nFloors; i++) {
+    build.push(
+      " "
+        .repeat(nFloors - i)
+        .concat("*".repeat((i - 1) * 2 + 1))
+        .concat(" ".repeat(nFloors - i))
+    );
+  }
+  return build;
+}
